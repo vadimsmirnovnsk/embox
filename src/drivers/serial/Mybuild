@@ -65,6 +65,12 @@ module at91_uart extends embox.driver.diag.diag_api {
 	source "at91_uart.c"
 }
 
+module raspi_uart extends embox.driver.diag.diag_api {
+	option number baud_rate=115200
+
+	source "raspi_uart.c"
+}
+
 module i8250 extends serial {
 	option number baud_rate
 
