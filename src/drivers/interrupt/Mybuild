@@ -48,6 +48,12 @@ module cortexm_nvic extends irqctrl_api {
 	source "cortexm_nvic.c", "cortexm_nvic.h"
 }
 
+module raspi extends irqctrl_api {
+	source "raspi.c", "raspi.h"
+
+	depends embox.util.Bit
+}
+
 @BuildDepends(embox.arch.arm.cmsis)
 module cmsis_nvic extends irqctrl_api {
 	option number irq_table_size = 16
@@ -60,6 +66,10 @@ module mips_intc extends irqctrl_api {
 
 module omap3_intc extends irqctrl_api {
 	source "omap3_intc.c", "omap3_intc.h"
+}
+
+module bpi_intc extends irqctrl_api {
+	source "bpi_intc.c", "bpi_intc.h"
 }
 
 module ppc_intc extends irqctrl_api {
